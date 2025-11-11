@@ -80,6 +80,7 @@ section {
   position: relative;
   overflow: hidden;
 }
+
 .intro-container {
   position: relative;
   display: flex;
@@ -87,6 +88,7 @@ section {
   align-items: center;
   justify-content: center;
 }
+
 .intro-title {
   font-size: 7rem;
   font-weight: 900;
@@ -196,13 +198,16 @@ section {
   margin-bottom: 10px;
 }
 
-/* Efek khusus */
-.software-item img[alt="Canva Logo"],
-.software-item img[alt="videography"],
-.software-item img[alt="photography"] {
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 6px;
+/* Hilangkan garis bawah link */
+.software-item a {
+  text-decoration: none;
+  color: #f6b102;
+}
+.software-item a:hover {
+  color: #ffcc33;
+}
+.software-item a:visited {
+  color: #f6b102;
 }
 
 .footer {
@@ -211,115 +216,6 @@ section {
   justify-content: space-between;
   font-size: 1rem;
   color: #e0e0e0;
-}
-
-/* =============================
-   EXPERIENCE SECTION
-   ============================= */
-.experience {
-  background-color: #151610; /* warna sama seperti gallery */
-  color: #fff;
-  text-align: center;
-  padding: 120px 80px;
-}
-
-.experience-title {
-  font-size: 4rem;
-  font-weight: 800;
-  color: #f6b102;
-  margin-bottom: 70px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.experience-content {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.experience-item {
-  background: rgba(255, 255, 255, 0.07);
-  border-radius: 20px;
-  padding: 30px 40px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  transition: all 0.4s ease;
-  backdrop-filter: blur(4px);
-}
-
-.experience-item:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 0 25px rgba(246, 177, 2, 0.25);
-}
-
-.experience-item h2 {
-  color: #f6b102;
-  font-size: 1.6rem;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.experience-item p {
-  color: #e0e0e0;
-  font-size: 1rem;
-  line-height: 1.7;
-  text-align: justify;
-}
-
-/* =============================
-   RESPONSIVE EXPERIENCE
-   ============================= */
-@media (max-width: 900px) {
-  .experience {
-    padding: 80px 30px;
-  }
-
-  .experience-title {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-  }
-
-  .experience-item {
-    padding: 20px 25px;
-  }
-
-  .experience-item h2 {
-    font-size: 1.2rem;
-  }
-
-  .experience-item p {
-    font-size: 0.95rem;
-  }
-}
-
-
-
-
-/* =============================
-   LINK STYLE DALAM SOFTWARE ITEM
-   ============================= */
-.software-item a {
-  text-decoration: none;
-  color: #f6b102;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-
-.software-item a:hover {
-  color: #ffcc33;
-  transform: scale(1.05);
-  transition: 0.3s ease;
-}
-
-.software-item a:visited {
-  color: #f6b102;
 }
 
 /* =============================
@@ -336,50 +232,47 @@ section {
 }
 
 /* =============================
-   EXPERIENCE ANIMATION EFFECT (CINEMATIC)
+   RESPONSIVE DESIGN
    ============================= */
-
-/* animasi muncul dari bawah dengan fade */
-@keyframes slideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
+@media (max-width: 900px) {
+  section {
+    padding: 80px 30px;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+  .portfolio-text {
+    font-size: 4.5rem;
+  }
+  .intro-title {
+    font-size: 4rem;
+  }
+  .intro-photo img {
+    width: 200px;
+  }
+  .intro-card {
+    padding: 20px;
+    font-size: 0.95rem;
+  }
+  .works-title {
+    font-size: 3rem;
+  }
+  .footer {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
   }
 }
 
-.experience-item {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
+/* Tambahan full responsif HP */
+@media (max-width: 600px) {
+  .portfolio-text { font-size: 3rem; letter-spacing: -1px; }
+  .signature { font-size: 1.8rem; margin-top: -10px; }
+  .top-bar { top: 20px; left: 30px; font-size: 0.9rem; }
+  .intro-title { font-size: 3rem; }
+  .intro-photo img { width: 180px; }
+  .intro-card { max-width: 95%; padding: 20px; font-size: 0.9rem; }
+  .works-title { font-size: 2.5rem; }
+  .works-desc { font-size: 0.95rem; }
+  .software-grid { gap: 25px; }
+  .software-item { width: 110px; height: 110px; }
+  .software-item img { width: 50px; height: 50px; }
+  .footer { flex-direction: column; gap: 8px; font-size: 0.85rem; text-align: center; }
 }
-
-/* ketika terlihat di layar */
-.experience-item.show {
-  opacity: 1;
-  transform: translateY(0);
-  animation: slideUp 0.8s ease forwards;
-}
-
-/* delay berurutan agar muncul satu per satu */
-.experience-item:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.experience-item:nth-child(2) {
-  animation-delay: 0.3s;
-}
-.experience-item:nth-child(3) {
-  animation-delay: 0.5s;
-}
-.experience-item:nth-child(4) {
-  animation-delay: 0.7s;
-}
-.experience-item:nth-child(5) {
-  animation-delay: 0.9s;
-}
-
-
-
