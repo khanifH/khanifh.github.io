@@ -100,14 +100,14 @@ section {
   position: relative;
   z-index: 1;
   margin-bottom: 0;
-  top: 20px; /* dari 50px → 20px biar naik dikit */
+  top: 50px; /* dari 50px → 20px biar naik dikit */
 }
 
 
 .intro-photo img {
   width: 320px;
   position: absolute;
-  bottom: 10px; /* dari -80px → -40px biar lebih nempel ke card */
+  bottom: 20px; /* dari -80px → -40px biar lebih nempel ke card */
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
@@ -304,6 +304,7 @@ section {
   .experience-item p { font-size: 0.9rem; }
   .footer { flex-direction: column; align-items: center; text-align: center; }
 }
+
 
 
 
