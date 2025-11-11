@@ -71,7 +71,7 @@ section {
 }
 
 /* =============================
-   INTRODUCTION SECTION (Final VSCode Style)
+   INTRODUCTION SECTION
    ============================= */
 .intro {
   background-color: #151610;
@@ -95,17 +95,18 @@ section {
   font-size: 7rem;
   font-weight: 900;
   text-transform: lowercase;
-  color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.12);
   letter-spacing: -5px;
   position: relative;
   z-index: 1;
   margin-bottom: 0;
 }
 
+/* posisi tulisan dan foto sesuai VSCode layout */
 .intro-photo img {
   width: 320px;
   position: absolute;
-  bottom: -60px;
+  bottom: -85px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
@@ -119,13 +120,14 @@ section {
   filter: drop-shadow(0px 35px 50px rgba(0, 0, 0, 0.6));
 }
 
+/* kotak putih pas di bawah foto */
 .intro-card {
   background: #fff;
   color: #333;
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
   max-width: 900px;
-  margin-top: 220px;
+  margin-top: 250px;
   padding: 35px 45px;
   line-height: 1.8;
   text-align: justify;
@@ -134,19 +136,14 @@ section {
   z-index: 3;
 }
 
-@media (max-width: 600px) {
-  .intro-title {
-    font-size: 3.5rem;
-  }
-  .intro-photo img {
-    width: 200px;
-    bottom: -40px;
-  }
-  .intro-card {
-    margin-top: 160px;
-    padding: 20px;
-    font-size: 0.95rem;
-  }
+.intro::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to bottom, rgba(119,123,100,0) 0%, #151610 100%);
 }
 
 /* =============================
@@ -294,8 +291,8 @@ section {
   section { padding: 70px 30px; }
   .portfolio-text { font-size: 4rem; }
   .signature { font-size: 2.5rem; }
-  .intro-photo img { width: 200px; }
-  .intro-card { padding: 25px; font-size: 1rem; }
+  .intro-photo img { width: 250px; bottom: -70px; }
+  .intro-card { margin-top: 200px; padding: 25px; font-size: 1rem; }
   .software-item { width: 110px; height: 110px; }
   .experience-title { font-size: 3rem; }
 }
@@ -305,8 +302,8 @@ section {
   .signature { font-size: 1.8rem; }
   .top-bar { top: 20px; left: 25px; font-size: 0.9rem; }
   .intro-title { font-size: 3rem; }
-  .intro-card { font-size: 0.9rem; }
-  .intro-photo img { width: 170px; margin-top: 20px; }
+  .intro-photo img { width: 180px; bottom: -50px; }
+  .intro-card { margin-top: 150px; padding: 20px; font-size: 0.9rem; }
   .software-grid { gap: 20px; }
   .software-item img { width: 50px; height: 50px; }
   .experience { padding: 60px 20px; }
@@ -316,4 +313,3 @@ section {
   .experience-item p { font-size: 0.9rem; }
   .footer { flex-direction: column; align-items: center; text-align: center; }
 }
-
